@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:prueba/CreateScaffold.dart';
+import 'package:prueba/Dise%C3%B1o/CreateScaffold.dart';
 import 'package:prueba/main.dart';
 
 

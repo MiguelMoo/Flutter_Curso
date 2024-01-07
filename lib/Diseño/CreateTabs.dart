@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:prueba/CreateScaffold.dart';
-import 'package:prueba/CreateSnackBar.dart';
+import 'package:prueba/Dise%C3%B1o/CreateScaffold.dart';
+import 'package:prueba/Dise%C3%B1o/CreateSnackBar.dart';
 import 'package:prueba/main.dart';
 
 class TabsCreate extends StatelessWidget {

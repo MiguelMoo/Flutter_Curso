@@ -2,9 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'CreateScaffold.dart';
-import 'CreateSnackBar.dart';
-import 'CreateTabs.dart';
+import 'Form/Form_with_validation.dart';
+import 'Diseño/CreateScaffold.dart';
+import 'Diseño/CreateSnackBar.dart';
+import 'Diseño/CreateTabs.dart';
 
 void main() => runApp(const Miapp());
 
@@ -54,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
     () => const CreateSnackBar(),
     () => const OrientationApp(),
     () => const TabsCreate(),
+    () => const FormValidationApp(),
   ];
 
   void _onItemTapped(int index) {
@@ -107,7 +109,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {
                   _onItemTapped(3);
                   Navigator.pop(context);
-              }
+                }),
+            ListTile(
+              title: const Text('Form validated'),
+              selected: _selectedIndex == 4,
+              onTap: () {
+                _onItemTapped(4);
+                Navigator.pop(context);
+              },
             )
           ],
         ),
