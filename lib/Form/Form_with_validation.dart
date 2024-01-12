@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: FormValidationApp(),
-  ));
-}
-
 class FormValidationApp extends StatefulWidget {
   const FormValidationApp({Key? key}) : super(key: key);
 

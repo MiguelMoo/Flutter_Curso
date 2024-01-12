@@ -1,11 +1,13 @@
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:prueba/list/floanting_appbar_above_a_list.dart';
 import 'Form/Form_with_validation.dart';
 import 'Diseño/CreateScaffold.dart';
 import 'Diseño/CreateSnackBar.dart';
 import 'Diseño/CreateTabs.dart';
+import 'list/create_list_with_diffrent_types_of_items.dart';
+import 'list/list_with_space.dart';
 
 void main() => runApp(const Miapp());
 
@@ -19,7 +21,7 @@ class Miapp extends StatelessWidget {
       title: titlea,
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
-              seedColor: Color.fromARGB(255, 248, 8, 20),
+              seedColor:  const Color.fromARGB(255, 248, 8, 20),
               brightness: Brightness.dark),
           textTheme: TextTheme(
               displayLarge: const TextStyle(
@@ -56,6 +58,16 @@ class _MyHomePageState extends State<MyHomePage> {
     () => const OrientationApp(),
     () => const TabsCreate(),
     () => const FormValidationApp(),
+    () => Create_list_differents_item(
+          items: List<ListItem>.generate(
+            1000,
+            (i) => i % 6 == 0
+                ? HeadingItem('Heading $i')
+                : MessageItem('Sender $i', 'Message body $i'),
+          ),
+        ),
+    () => const SpacedItemsList(),
+    () => const FloantingAppbar(),
   ];
 
   void _onItemTapped(int index) {
@@ -117,7 +129,31 @@ class _MyHomePageState extends State<MyHomePage> {
                 _onItemTapped(4);
                 Navigator.pop(context);
               },
-            )
+            ),
+            ListTile(
+              title: const Text('Create list with different items'),
+              selected: _selectedIndex == 5,
+              onTap: () {
+                _onItemTapped(5);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Create list with space items'),
+              selected: _selectedIndex == 6,
+              onTap: () {
+                _onItemTapped(6);
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Create list with floanting AppBar'),
+              selected: _selectedIndex == 7,
+              onTap: () {
+                _onItemTapped(7);
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
